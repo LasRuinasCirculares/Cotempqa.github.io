@@ -20,10 +20,10 @@
             text-align: center;
         }
         .container {
-            padding: 20px 50px; /* 设置内容区域左右内边距 */
-            background-color: white; /* 设置内容区域背景颜色 */
-            margin: 0 auto; /* 居中内容 */
-            max-width: 950px; /* 最大宽度 */
+            background-color: white;
+            margin: 10px auto;
+            max-width: 950px;
+            padding-bottom: 1px; /* 添加底部内边距 */
         }
         .author-info {
             font-size: 12px;
@@ -38,6 +38,21 @@
         .image-container {
             text-align: center;
             margin: 20px 0;
+        }
+        /* Add margin-bottom to paragraphs */
+        .container p {
+            margin-bottom: 20px;
+            padding: 0 20px; /* Add padding to paragraphs */
+        }
+        .section {
+            background-color: white; /* Left background color */
+            border-left: 20px solid white; /* White border */
+            border-right: 20px solid white; /* White border */
+            margin-bottom: 40px; /* Add gap between sections */
+            padding: 0 20px; /* Add padding to sections */
+        }
+        .section h2 {
+            color: #229EBC; /* Header color */
         }
     </style>
 </head>
@@ -71,33 +86,66 @@
             </p>
         </div>
     </div>
+
     <div class="container">
-        <h2>Why probe into co-temporal events?</h2>
-        <div class="image-container">
-            <img src="data.png" alt="Description of the image" width="450">
+        <div class="section">
+            <h2>Why probe into co-temporal events?</h2>
+            <div class="image-container">
+                <img src="data.png" alt="Description of the image" width="450">
+            </div>
+            <p>In real-world scenarios, the relationships between events are often very complex. Taking Elon Musk and Sam Altman as examples, Elon Musk served as the chairman of Tesla from 2004 to 2018 and worked at OpenAI from 2015 to 2019, illustrating how the same individual can have overlapping roles across different organizations. Meanwhile, Sam Altman has been with OpenAI since 2015, overlapping with Elon Musk's tenure there. This demonstrates that different individuals can also have overlapping tenures within the same organization. To enable models to effectively represent and reason about the real world, understanding the logical connections between co-temporal events becomes even more crucial.</p>
         </div>
-        <p>In real-world scenarios, the relationships between events are often very complex. Taking Elon Musk and Sam Altman as examples, Elon Musk served as the chairman of Tesla from 2004 to 2018 and worked at OpenAI from 2015 to 2019, illustrating how the same individual can have overlapping roles across different organizations. Meanwhile, Sam Altman has been with OpenAI since 2015, overlapping with Elon Musk's tenure there. This demonstrates that different individuals can also have overlapping tenures within the same organization. To enable models to effectively represent and reason about the real world, understanding the logical connections between co-temporal events becomes even more crucial.</p>
+    </div>
         
-        <h2>Introduction</h2>
-        <p>Recent advancements in LLMs like GPT-4 have shown impressive capabilities, but they struggle with temporal reasoning, a critical aspect for understanding real-world events. Current datasets, like TIMEQA and TEMPREASON, mainly focus on single or isolated events, lacking the complexity of concurrent events seen in real-life situations.</p>
-        <h2>Co-Temporal QA (COTEMP-QA) Benchmark</h2>
-        <p>COTEMP-QA is designed to fill the gap by providing a comprehensive dataset that evaluates LLMs on co-temporal scenarios. It includes four types of co-temporal relations:</p>
-        <ul>
-            <li><strong>Equal:</strong> Events occur simultaneously.</li>
-            <li><strong>Overlap:</strong> Events partially coincide in time.</li>
-            <li><strong>During:</strong> One event is entirely within the timeline of another.</li>
-            <li><strong>Mix:</strong> A combination of the above types.</li>
-        </ul>
-        <h2>Dataset Construction</h2>
-        <p>The dataset is constructed using temporal facts extracted from Wikidata. These facts are structured and categorized into co-temporal relations. The questions in the dataset are designed to test the model's ability to reason about these concurrent events.</p>
-        <h2>Experiments and Results</h2>
-        <p>The experiments reveal that even advanced models like GPT-4 perform significantly below human-level reasoning on COTEMP-QA tasks. The Chain-of-Thought (CoT) strategy, though beneficial in some contexts, does not consistently improve performance in co-temporal reasoning tasks.</p>
-        <h2>Mathematical Reasoning Strategy</h2>
-        <p>The study proposes a mathematical reasoning strategy (MR-COT) to enhance co-temporal reasoning. This approach showed a notable improvement over existing methods but still lagged behind human performance.</p>
-        <h2>Conclusion</h2>
-        <p>The paper concludes that there is a substantial need for further advancements in improving the co-temporal reasoning capabilities of LLMs. The COTEMP-QA benchmark is a step towards evaluating and fostering such improvements.</p>
+    <div class="container">
+        <div class="section">
+            <h2>Introduction</h2>
+            <p>Recent advancements in LLMs like GPT-4 have shown impressive capabilities, but they struggle with temporal reasoning, a critical aspect for understanding real-world events. Current datasets, like TIMEQA and TEMPREASON, mainly focus on single or isolated events, lacking the complexity of concurrent events seen in real-life situations.</p>
+        </div>
+    </div>
+        
+    <div class="container">
+        <div class="section">
+            <h2>Co-Temporal QA (COTEMP-QA) Benchmark</h2>
+            <p>COTEMP-QA is designed to fill the gap by providing a comprehensive dataset that evaluates LLMs on co-temporal scenarios. It includes four types of co-temporal relations:</p>
+            <ul>
+                <li><strong>Equal:</strong> Events occur simultaneously.</li>
+                <li><strong>Overlap:</strong> Events partially coincide in time.</li>
+                <li><strong>During:</strong> One event is entirely within the timeline of another.</li>
+                <li><strong>Mix:</strong> A combination of the above types.</li>
+            </ul>
+        </div>
+    </div>
+       
+    <div class="container">
+        <div class="section">
+            <h2>Dataset Construction</h2>
+            <p>The dataset is constructed using temporal facts extracted from Wikidata. These facts are structured and categorized into co-temporal relations. The questions in the dataset are designed to test the model's ability to reason about these concurrent events.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Experiments and Results</h2>
+            <p>The experiments reveal that even advanced models like GPT-4 perform significantly below human-level reasoning on COTEMP-QA tasks. The Chain-of-Thought (CoT) strategy, though beneficial in some contexts, does not consistently improve performance in co-temporal reasoning tasks.</p>
+        </div>
+    </div>
+        
+    <div class="container">
+        <div class="section">
+            <h2>Mathematical Reasoning Strategy</h2>
+            <p>The study proposes a mathematical reasoning strategy (MR-COT) to enhance co-temporal reasoning. This approach showed a notable improvement over existing methods but still lagged behind human performance.</p>
+        </div>
+    </div>
+        
+    <div class="container">
+        <div class="section">
+            <h2>Conclusion</h2>
+            <p>The paper concludes that there is a substantial need for further advancements in improving the co-temporal reasoning capabilities of LLMs. The
+            </div>
     </div>
 </body>
 </html>
+
 
 
