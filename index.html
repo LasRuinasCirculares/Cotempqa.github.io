@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: "Times New Roman", serif;
-            font-size: 15px;
+            font-size: 18px;
             line-height: 1.6;
             margin: 0;
             padding: 0;
@@ -22,7 +22,7 @@
         .container {
             background-color: white;
             margin: 10px auto;
-            max-width: 950px;
+            max-width: 1000px;
             padding-bottom: 1px; /* 添加底部内边距 */
         }
         .author-info {
@@ -36,8 +36,13 @@
             line-height: 1.4;
         }
         .image-container {
-            text-align: center;
+            display: flex;
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
             margin: 20px 0;
+        }
+        .image-container {
+            margin-bottom: 10px; /* 添加图片底部外边距 */
         }
         /* Add margin-bottom to paragraphs */
         .container p {
@@ -54,6 +59,26 @@
         .section h2 {
             color: #229EBC; /* Header color */
         }
+        .text-box {
+            background-color: #f0f0f0; /* 灰色背景 */
+            border-radius: 10px; /* 圆角 */
+            padding: 0px; /* 内边距 */
+            margin: 20px 0; /* 外边距 */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 轻微的阴影效果 */
+        }
+        .caption {
+            font-size: 0.8em;
+            color: #555;
+            text-align: center;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
     </style>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -88,16 +113,24 @@
             </p>
         </div>
     </div>
-
     <div class="container">
         <div class="section">
             <h2>Why probe into co-temporal events?</h2>
-            <div class="image-container">
-                <img src="data.png" alt="Description of the image" width="450">
+            <div class="content">
+                <div class="image-container">
+                    <img src="data.png" alt="Description of the image" width="700">
+                </div>
+                <div class="text-box">
+                    <p>In real-world scenarios, the relationships between events are often very complex. Taking Elon Musk and Sam Altman as examples, Elon Musk served as the chairman of Tesla from 2004 to 2018 and worked at OpenAI from 2015 to 2019, illustrating how the same individual can have overlapping roles across different organizations. Meanwhile, Sam Altman has been with OpenAI since 2015, overlapping with Elon Musk's tenure there. This demonstrates that different individuals can also have overlapping tenures within the same organization. To enable models to effectively represent and reason about the real world, understanding the logical connections between co-temporal events becomes even more crucial.</p>
+                </div>
+                <div class="image-container">
+                    <img src="example.png" alt="Description of the image" width="700">
+                </div>
+                <p class="caption">Taking Elon Musk and Sam Altman as examples, we can intuitively understand the differences between prior works and our works.</p>
             </div>
-            <p>In real-world scenarios, the relationships between events are often very complex. Taking Elon Musk and Sam Altman as examples, Elon Musk served as the chairman of Tesla from 2004 to 2018 and worked at OpenAI from 2015 to 2019, illustrating how the same individual can have overlapping roles across different organizations. Meanwhile, Sam Altman has been with OpenAI since 2015, overlapping with Elon Musk's tenure there. This demonstrates that different individuals can also have overlapping tenures within the same organization. To enable models to effectively represent and reason about the real world, understanding the logical connections between co-temporal events becomes even more crucial.</p>
         </div>
     </div>
+    
         
     <div class="container">
         <div class="section">
@@ -105,13 +138,16 @@
             <div class="image-container">
                 <img src="co-temporal-relations.png" alt="Description of the image" width="450">
             </div>
-            <p>Cotemporal relations can be classified into three distinct types as the figure shows. Based on these relations, we divided our dataset into four categories according to the different scenario.</p>
-            <ul>
-                <li><strong>Equal:</strong> Facts occur simultaneously, representing a strict co-temporal relationship. This is the simplest form of co-temporality but is essential for understanding facts that happen concurrently without any duration differences.</li>
-                <li><strong>Overlap:</strong> Facts that partially coincide in time. This scenario is more common in real-world settings, where facts often intersect for a part of their duration.</li>
-                <li><strong>During:</strong> One fact is entirely contained within the timeline of another, reflecting a more complex interaction of timelines.</li>
-                <li><strong>Mix:</strong> A combination of the three types above. This category is particularly challenging as it involves the complexity and variability of real-world temporal relationships, necessitating a comprehensive level of co-temporal reasoning.</li>
-            </ul>
+            <p class="caption">Cotemporal relations can be classified into three distinct types.</p>
+            <div class="text-box">
+                <p>Based on three basic cotemporal relations, we divided our dataset into four categories according to the different scenario<p>
+                <ul>
+                    <li><strong>Equal:</strong> Facts occur simultaneously, representing a strict co-temporal relationship. This is the simplest form of co-temporality but is essential for understanding facts that happen concurrently without any duration differences.</li>
+                    <li><strong>Overlap:</strong> Facts that partially coincide in time. This scenario is more common in real-world settings, where facts often intersect for a part of their duration.</li>
+                    <li><strong>During:</strong> One fact is entirely contained within the timeline of another, reflecting a more complex interaction of timelines.</li>
+                    <li><strong>Mix:</strong> A combination of the three types above. This category is particularly challenging as it involves the complexity and variability of real-world temporal relationships, necessitating a comprehensive level of co-temporal reasoning.</li>
+                </ul>
+            </div>
         </div>
     </div>
        
@@ -131,7 +167,31 @@
         </div>
     </div>
 
+    <div class="container">
+        <div class="section">
+            <h2>How to construct our dataset?</h2>
+            <div class="image-container">
+                <img src="pipeline.png" alt="Description of the image" width="450">
+            </div>
+            <p>We provided an adaptable data construction pipeline, allowing us to more easily use updating data as our data source and also to enlarge our dataset with data sources other than Wikidata.<p>
+            <h3>Construct data triples</h3>
+            <p> Utilizing the Wikidata dump of September 20, 2023 as our knowledge source, we focus on nine time-sensitive entity relations and keep a maximum of 2,000 subjects for each relation type. To structure the information, we transform the knowledge triples and qualifiers into a quintuplet format of \( (s, r, o, t_{s}, t_{e}) \) for further exploration.</p>
+            <h3>Extracting Co-temporal Facts</h3>
+            <p> First, we compare the timestamps of different facts to see if they overlap. Each fact has three components: subject (\(s\)), relation (\(r\)), and object (\(o\)). So, if we have two facts, \(f_{i}\) and \(f_{j}\), they're represented as triples: \(f_{i} = \{s_{i}, r_{i}, o_{i}\}\) and \(f_{j} = \{s_{j}, r_{j}, o_{j}\}\). We look at the sets of subjects (\(\mathcal{S}\)), relations (\(\mathcal{R}\)), and objects (\(\mathcal{O}\)) within these pairs of facts. Then, we categorize these pairs into five scenarios based on how these sets compare. For example, one scenario is when the subjects and relations stay the same, but the objects change. We exclude certain scenarios because they're not realistic. For instance, it doesn't make sense for the same subject and object to have different relationships, or for the same object to have the same relationship with different subjects at the same time. The concrete process is shown in the figure above.</p>
+            <h3>QA Pairs Constructions</h3>
+            <p>Upon identifying co-temporal facts \((f_i, f_j, T_{\text{min}})\), we construct a query \(Q\) using a condition fact \(f_{\text{cond}}\) and a query fact \(f_{\text{query}}\). \(f_{\text{cond}}\) is chosen from the intersection of \((f_i, f_j)\), while \(f_{\text{query}}\) is the other fact in the pair. To manage the correlation between \(f_{\text{cond}}\) and \(f_{\text{query}}\), we predefined 17 types of relevant relation pairs and created questions based on these templates. This predefined structure ensures that the facts are logically and contextually aligned. Using the temporal relations identified by \(T_{\text{min}}\), we categorize tasks into four classes: \textbf{Equal}, \textbf{Overlap}, \textbf{During}, and \textbf{Mix}. Since multiple events can occur simultaneously, a single temporal question might have multiple correct answers. To account for this, we aggregate all valid answers for query \(Q\) into a set. On average, each question has 1.42 answers.</p>                
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Experiment and result</h2>
+            <div class="image-container">
+                <img src="pipeline.png" alt="Description of the image" width="450">
+            </div>
+            <p>We provided an adaptable data construction pipeline, allowing us to more easily use updating data as our data source and also to enlarge our dataset with data sources other than Wikidata.<p> 
+        </div>
+    </div>
     
 </body>
 </html>
-
