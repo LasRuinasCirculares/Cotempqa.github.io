@@ -126,33 +126,12 @@
             <p> Utilizing the Wikidata dump of September 20, 2023 as our knowledge source, we focus on nine time-sensitive entity relations and keep a maximum of 2,000 subjects for each relation type. To structure the information, we transform the knowledge triples and qualifiers into a quintuplet format of \( (s, r, o, t_{s}, t_{e}) \) for further exploration.</p>
             <h3>Extracting Co-temporal Facts</h3>
             <p> First, we compare the timestamps of different facts to see if they overlap. Each fact has three components: subject (\(s\)), relation (\(r\)), and object (\(o\)). So, if we have two facts, \(f_{i}\) and \(f_{j}\), they're represented as triples: \(f_{i} = \{s_{i}, r_{i}, o_{i}\}\) and \(f_{j} = \{s_{j}, r_{j}, o_{j}\}\). We look at the sets of subjects (\(\mathcal{S}\)), relations (\(\mathcal{R}\)), and objects (\(\mathcal{O}\)) within these pairs of facts. Then, we categorize these pairs into five scenarios based on how these sets compare. For example, one scenario is when the subjects and relations stay the same, but the objects change. We exclude certain scenarios because they're not realistic. For instance, it doesn't make sense for the same subject and object to have different relationships, or for the same object to have the same relationship with different subjects at the same time. The concrete process is shown in the figure above.</p>
-            <h3>QA Pairs Construction<h3>
-            <p><p>
+            <h3>QA Pairs Constructions</h3>
+            <p>Upon identifying co-temporal facts \((f_i, f_j, T_{\text{min}})\), we construct a query \(Q\) using a condition fact \(f_{\text{cond}}\) and a query fact \(f_{\text{query}}\). \(f_{\text{cond}}\) is chosen from the intersection of \((f_i, f_j)\), while \(f_{\text{query}}\) is the other fact in the pair. To manage the correlation between \(f_{\text{cond}}\) and \(f_{\text{query}}\), we predefined 17 types of relevant relation pairs and created questions based on these templates. This predefined structure ensures that the facts are logically and contextually aligned. Using the temporal relations identified by \(T_{\text{min}}\), we categorize tasks into four classes: \textbf{Equal}, \textbf{Overlap}, \textbf{During}, and \textbf{Mix}. Since multiple events can occur simultaneously, a single temporal question might have multiple correct answers. To account for this, we aggregate all valid answers for query \(Q\) into a set. On average, each question has 1.42 answers.</p>                
         </div>
     </div>
 
-    <div class="container">
-        <div class="section">
-            <h2>Experiments and Results</h2>
-            <p>The experiments reveal that even advanced models like GPT-4 perform significantly below human-level reasoning on COTEMP-QA tasks. The Chain-of-Thought (CoT) strategy, though beneficial in some contexts, does not consistently improve performance in co-temporal reasoning tasks.</p>
-        </div>
-    </div>
-        
-    <div class="container">
-        <div class="section">
-            <h2>Mathematical Reasoning Strategy</h2>
-            <p>The study proposes a mathematical reasoning strategy (MR-COT) to enhance co-temporal reasoning. This approach showed a notable improvement over existing methods but still lagged behind human performance.</p>
-        </div>
-    </div>
-        
-    <div class="container">
-        <div class="section">
-            <h2>Conclusion</h2>
-            <p>The paper concludes that there is a substantial need for further advancements in improving the co-temporal reasoning capabilities of LLMs. The
-            </div>
-    </div>
+    
 </body>
 </html>
-
-
 
