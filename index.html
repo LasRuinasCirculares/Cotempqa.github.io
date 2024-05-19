@@ -15,23 +15,55 @@
         .header {
             background-color: #007BFF;
             color: white;
-            padding:  0px;
+            padding: 20px 0;
             text-align: center;
         }
         .container {
             padding: 20px;
+        }
+        .author-info {
+            font-size: 12px;
+            text-align: center;
+            line-height: 1.4;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
         }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>Living in the Moment: Can Large Language Models Grasp Co-Temporal Reasoning?</h1>
-        <p>Zhaochen Su, Juntao Li, Jun Zhang, Tong Zhu, Xiaoye Qu, Pan Zhou, Bowen Yan, Yu Cheng, Min Zhang</p>
-        <p>Soochow University, China; Shanghai AI Laboratory; Huazhong University of Science and Technology; Tsinghua University; The Chinese University of Hong Kong</p>
+        <div class="author-info">
+            <p>
+                Zhaochen Su<sup>1<sup>∗</sup></sup>, 
+                Juntao Li<sup>1<sup>†</sup></sup>, 
+                Jun Zhang<sup>1</sup>, 
+                Tong Zhu<sup>1</sup>
+            </p>
+            <p>
+                <strong>Xiaoye Qu<sup>2,3</sup></strong>, 
+                <strong>Pan Zhou<sup>3</sup></strong>, 
+                <strong>Bowen Yan<sup>4</sup></strong>, 
+                <strong>Yu Cheng<sup>5</sup></strong>, 
+                <strong>Min Zhang<sup>1</sup></strong>
+            </p>
+            <p>
+                <sup>1</sup>Institute of Computer Science and Technology, Soochow University, China<br>
+                <sup>2</sup>Shanghai AI Laboratory, <sup>3</sup>Huazhong University of Science and Technology<br>
+                <sup>4</sup>Tsinghua University, <sup>5</sup>The Chinese University of Hong Kong
+            </p>
+        </div>
     </div>
     <div class="container">
         <h2>Abstract</h2>
         <p>The paper addresses the limitations of current Large Language Models (LLMs) in handling temporal reasoning, particularly focusing on concurrent events and intricate temporal interconnections. The authors introduce COTEMP-QA, a benchmark designed to evaluate co-temporal reasoning across four scenarios (Equal, Overlap, During, Mix) with 4,748 samples. Experiments show a significant gap between human-level reasoning and current LLMs, even with Chain of Thought (CoT) methodologies. The study highlights the importance of mathematical reasoning in handling co-temporal events and proposes a strategy to improve LLMs' performance in this area.</p>
+        
+        <div class="image-container">
+            <img src="data.png" alt="Description of the image" width="600">
+        </div>
+        
         <h2>Introduction</h2>
         <p>Recent advancements in LLMs like GPT-4 have shown impressive capabilities, but they struggle with temporal reasoning, a critical aspect for understanding real-world events. Current datasets, like TIMEQA and TEMPREASON, mainly focus on single or isolated events, lacking the complexity of concurrent events seen in real-life situations.</p>
         <h2>Co-Temporal QA (COTEMP-QA) Benchmark</h2>
@@ -53,3 +85,4 @@
     </div>
 </body>
 </html>
+
