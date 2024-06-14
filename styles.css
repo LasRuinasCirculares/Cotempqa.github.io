@@ -1,0 +1,146 @@
+body {
+    font-family: "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: white; /* 背景颜色 */
+}
+
+.header {
+    background-color: rgb(10, 101, 10);
+    color: white;
+    text-align: center;
+    padding: 20px 100px; /* 设置页眉左右内边距 */
+    margin-top: 0px;
+}
+
+.container {
+    background-color: white;
+    margin: 10px auto;
+    max-width: 1200px;
+    padding-bottom: 1px; /* 添加底部内边距 */
+    margin-bottom: 20px;
+    padding: 0 0px; /* Add padding to paragraphs */
+}
+
+.container2 {
+    background-color: white;
+    margin: 10px auto;
+    max-width: 1200px;
+    padding: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.author-info {
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.notes {
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    margin: 20px 0;
+}
+
+.image-container {
+    margin-bottom: 10px; /* 添加图片底部外边距 */
+}
+
+/* Add margin-bottom to paragraphs */
+.section {
+    background-color: white; /* Left background color */
+    border-left: 2px solid white; /* White border */
+    border-right: 2px solid white; /* White border */
+    margin-bottom: 40px; /* Add gap between sections */
+    padding: 0 0px; /* Add padding to sections */
+}
+
+.section-title {
+    background-color: white;
+    color: white;
+    padding: 5px 5px; /* Adjust padding for title */
+    text-align: center;
+}
+
+h2 {
+    background-color: white;
+    color: black;
+    padding-right: 10px; /* 调整标题的内边距 */
+    margin: 0;
+}
+
+h3 {
+    background-color: white;
+    color: black;
+    padding-right: 10px; /* 右侧内边距为10px */
+    padding-left: 0px; /* 左侧内边距为100px */
+    margin: 0; /* 去除默认的上下边距 */
+    font-size: 28px; /* 将字体大小设置为24px */
+}
+
+.text-box {
+    background-color: white;
+    border: 1px solid #ccc; /* 设置2px宽度的灰色边框 */
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 25px;
+    padding-right: 2px;
+    padding-bottom: 5px;
+    padding-left: 2px;
+    margin-top: 100px;
+    margin-bottom: 10;
+    text-align: center ;
+}
+
+p {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+p2 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+ul {
+    background-color: white;
+    padding: 40px 40px; /* 增加上下内边距为20px,左右内边距为40px */
+    margin-left: 100px;
+    margin-right: 100px; /* 增加上下左右外边距为40px */
+    border-radius: 10px; /* 添加10px圆角 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+}
+
+ul li {
+    margin-bottom: 10px; /* 增加列表项之间的垂直间距 */
+}
+
+ul li strong {
+    color: #333; /* 加粗文本的颜色 */
+}
+
+.image-container2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.image-container img {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.caption {
+    text-align: center;
+}
