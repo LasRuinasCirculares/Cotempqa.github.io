@@ -115,8 +115,8 @@ p2 {
 ul {
     background-color: white;
     padding: 40px 40px; /* 增加上下内边距为20px,左右内边距为40px */
-    margin-left: 100px;
-    margin-right: 100px; /* 增加上下左右外边距为40px */
+    margin-left: 10px;
+    margin-right: 10px; /* 增加上下左右外边距为40px */
     border-radius: 10px; /* 添加10px圆角 */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
 }
